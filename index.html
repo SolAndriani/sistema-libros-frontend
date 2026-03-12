@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tipografías clásicas -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Sistema de Biblioteca</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body, #root {
+        height: 100%;
+      }
+
+      body {
+        font-family: 'Lora', serif;
+        background-color: #3e2c23; /* marrón oscuro */
+        color: #ffffff; /* texto blanco */
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+        color: #ffffff; /* títulos blancos */
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* contraste elegante */
+      }
+
+      a {
+        text-decoration: none;
+        color: #ffffff; /* enlaces blancos */
+      }
+
+      button {
+        font-family: 'Lora', serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #5a3d2b, #3e2c23); /* marrones */
+        color: #ffffff; /* texto blanco */
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #3e2c23, #5a3d2b);
+        opacity: 0.9;
+      }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
