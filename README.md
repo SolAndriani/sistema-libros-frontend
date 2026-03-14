@@ -1,16 +1,84 @@
-# React + Vite
+# Sistema de Gestión de Libros — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interfaz web desarrollada con **React** y **Vite**.  
+Autora: Sol Andriani · 2025
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías
 
-## React Compiler
+- React 18
+- Vite
+- React Router DOM (enrutamiento)
+- Axios (llamadas HTTP)
+- Context API (manejo de estado de sesión)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Requisitos previos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 18 o superior instalado
+- El backend corriendo en `http://localhost:8000`
+
+---
+
+## Instalación y ejecución local
+
+### 1. Clonar el repositorio
+
+git clone https://github.com/SolAndriani/sistema-libros-frontend
+cd sistema-libros-frontend
+
+
+### 2. Instalar dependencias
+
+npm install
+
+
+### 3. Configurar variables de entorno
+
+cp .env.example .env
+
+Editar `.env` con la URL del backend.
+
+### 4. Iniciar la aplicación
+
+npm run dev
+
+La aplicación queda disponible en: `http://localhost:5173`
+
+---
+
+## Variables de entorno
+
+Crear un archivo `.env` en la raíz del proyecto:
+
+VITE_API_URL=http://localhost:8000
+
+---
+
+## Estructura del proyecto
+
+src/
+├── App.jsx                 # Rutas y estructura principal
+├── index.css               # Estilos globales y variables CSS
+├── context/
+│   └── AuthContext.jsx     # Estado de autenticación (Context API)
+├── services/
+│   └── api.js              # Configuración de Axios e interceptores
+└── components/
+    ├── BooksTable.jsx      # Tabla paginada de libros
+    ├── LoginForm.jsx       # Formulario de login
+    └── RegisterForm.jsx    # Formulario de registro
+
+---
+
+## Funcionalidades
+
+- Registro e inicio de sesión con email y contraseña
+- Sesión persistente: al recargar la página se mantiene el login
+- Listado de libros con paginación (10 por página)
+- Agregar, editar y eliminar libros
+- Confirmación antes de eliminar
+- Rutas protegidas: redirige al login si no hay sesión activa
+- Cierre de sesión con borrado de token
